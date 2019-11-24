@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { TodosComponent } from './components/todos/todos.component';
 import { TodoitemComponent } from './components/todoitem/todoitem.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { AddtodoComponent } from './components/addtodo/addtodo.component';
+import { AboutComponent } from './components/pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { AddtodoComponent } from './components/addtodo/addtodo.component';
     TodosComponent,
     TodoitemComponent,
     HeaderComponent,
-    AddtodoComponent
+    AddtodoComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
