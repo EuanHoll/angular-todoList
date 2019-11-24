@@ -28,9 +28,20 @@ export class TodosComponent implements OnInit {
     this.todoService.deleteTodo(todo).subscribe();
   }
 
-  addTodo(todo:Todo)
+  addTodo(title:string)
   {
+    var id = Math.floor(Math.random() * 10000);
+    while (this.todos.filter(t => t.id == id).length > 0);
+      id = Math.floor(Math.random() * 10000);
+    
+    const todo = {
+      title: title,
+      completed: false,
+      id: id
+    }
+
     this.todoService.addTodo(todo).subscribe(todo => {
+      todo.id = id;
       this.todos.push(todo);
     })
   }
